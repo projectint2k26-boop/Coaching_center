@@ -814,18 +814,12 @@
   document.getElementById('google-login-btn').addEventListener('click', () => {
     signInWithRedirect(auth, provider).catch(e => showError(e.message));
   });
-      }
-      closeAuthModal();
-    }).catch(e => showError(e.message));
-  });
+
 
   document.getElementById('google-register-btn').addEventListener('click', () => {
     signInWithRedirect(auth, provider).catch(e => showError(e.message));
   });
-      }
-      closeAuthModal();
-    }).catch(e => showError(e.message));
-  });
+
 
   document.getElementById('login-btn').addEventListener('click', () => {
     const email = document.getElementById('login-email').value;
