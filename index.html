@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victory IAS Academy – Tamil Nadu's Premier Coaching Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="nav-logo" href="javascript:void(0)" onclick="showPage('home')">
+    <div class="nav-logo-icon">V</div>
+    <div class="nav-logo-text">Victory <span>Academy</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="javascript:void(0)" onclick="showPage('home')">Home</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('about')">About</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('awards')">Awards</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('branches')">Branches</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('apply')">Apply</a></li>
+  </ul>
+  <div class="nav-actions">
+    <div class="user-profile" id="user-profile" style="position: relative; cursor: pointer;" onclick="toggleDropdown()">
+      <div class="user-avatar" id="user-avatar-initial">U</div>
+      <span id="user-name-display">User</span>
+      <div id="user-dropdown" style="display: none; position: absolute; top: 100%; right: 0; background: var(--white); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 10px; margin-top: 10px; width: 120px; z-index: 1000;">
+        <button class="logout-btn" onclick="logoutUser()" style="width: 100%; text-align: left; padding: 8px; color: var(--navy); text-decoration: none; border-radius: 4px; border: none; background: var(--cream); cursor: pointer; font-weight: 600;">Logout</button>
+      </div>
+    </div>
+
+    <button class="login-btn" id="login-nav-btn" onclick="openAuthModal()">Login</button>
+    <a class="nav-cta" href="javascript:void(0)" onclick="showPage('apply')">Enroll Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero page-section active" id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">🏆 Tamil Nadu's #1 Coaching Center</div>
+      <h1>Shape Your <span>IAS &amp; Govt</span> Career Here</h1>
+      <p class="hero-sub">Victory Academy has guided over 3,200 students to government service success across Tamil Nadu. Your dream posting begins with us.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="javascript:void(0)" onclick="showPage('branches')">Explore Branches</a>
+        <a class="btn-outline" href="javascript:void(0)" onclick="showPage('apply')">Apply for a Course</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-num">3200+</div>
+        <div class="stat-label">Students Placed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">18</div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Branches</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">97%</div>
+        <div class="stat-label">Pass Rate 2024</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Courses Offered</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">120+</div>
+        <div class="stat-label">Expert Faculty</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about page-section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-block">
+        <div class="about-img-main">
+          <div class="about-img-text">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="38" stroke="#C8922A" stroke-width="2" stroke-dasharray="6 3"/>
+              <path d="M25 55L40 20L55 55" stroke="#C8922A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M30 44H50" stroke="#C8922A" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <p>Victory Academy<br><small style="color:rgba(200,146,42,0.7);font-size:13px">Est. 2006</small></p>
+          </div>
+        </div>
+        <div class="about-badge-float">
+          <strong>18+</strong>
+          <span>Years of Trust</span>
+        </div>
+      </div>
+      <div>
+        <div class="section-tag">About Us</div>
+        <h2 class="section-title">Building Tamil Nadu's Future Civil Servants</h2>
+        <p class="section-sub">Since 2006, Victory Academy has been the most trusted coaching destination for UPSC, TNPSC, SSC, Banking, and Police examinations across South Tamil Nadu.</p>
+        <div class="about-features">
+          <div class="about-feat">
+            <div class="feat-icon">🎓</div>
+            <div class="feat-text">
+              <strong>Expert Faculty</strong>
+              <span>Retired IAS/IPS officers and subject matter experts with decades of experience.</span>
+            </div>
+          </div>
+          <div class="about-feat">
+            <div class="feat-icon">📚</div>
+            <div class="feat-text">
+              <strong>Comprehensive Study Material</strong>
+              <span>Updated notes, mock tests, and practice papers aligned with latest exam patterns.</span>
+            </div>
+          </div>
+          <div class="about-feat">
+            <div class="feat-icon">🏆</div>
+            <div class="feat-text">
+              <strong>Proven Track Record</strong>
+              <span>Over 3,200 students placed in central and state government services.</span>
+            </div>
+          </div>
+          <div class="about-feat">
+            <div class="feat-icon">🔁</div>
+            <div class="feat-text">
+              <strong>Doubt Clearing & Mentorship</strong>
+              <span>Dedicated doubt sessions, personal mentorship, and interview coaching.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards page-section" id="awards">
+  <div class="section-inner">
+    <div class="section-tag" style="color:var(--gold)">Recognition & Achievements</div>
+    <h2 class="section-title">Awards & Student Success</h2>
+    <p class="section-sub">Our legacy is built on the achievements of our students and the recognition we've earned across Tamil Nadu.</p>
+    
+<div class="awards-grid pyramid">
+  <div class="awards-row">
+    <div class="award-card">
+<div class="award-icon">🏅</div>
+        <h4>Best Coaching Institute</h4>
+        <p>Tamil Nadu Education Excellence Award 2023 – recognized for outstanding pass rates in TNPSC Group exams.</p>
+      </div>
+    <div class="award-card">
+<div class="award-icon">🌟</div>
+        <h4>Top UPSC Results</h4>
+        <p>12 students cleared UPSC CSE in 2023-24 batch, including 2 students in the All India Top 100.</p>
+      </div>
+    <div class="award-card">
+<div class="award-icon">🎖️</div>
+        <h4>SSC Excellence Award</h4>
+        <p>Awarded by SSC Regional Office Chennai for highest number of SSC CGL selections from a single institute.</p>
+      </div>
+  </div>
+  <div class="awards-row">
+    <div class="award-card">
+<div class="award-icon">🚔</div>
+        <h4>Police Recruitment Leader</h4>
+        <p>Highest SI Police selections in Virudhunagar & Sivakasi districts for 3 consecutive years (2022–2024).</p>
+      </div>
+    <div class="award-card">
+<div class="award-icon">🏦</div>
+        <h4>Banking Sector Success</h4>
+        <p>200+ IBPS PO and SBI Clerk selections in 2024; recognised by Banking Recruitment Excellence Forum.</p>
+      </div>
+  </div>
+  <div class="awards-row">
+    <div class="award-card">
+<div class="award-icon">📰</div>
+        <h4>Media Recognition</h4>
+        <p>Featured in The Hindu, Dinamalar, and Vikatan as Tamil Nadu's most impactful coaching brand.</p>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="toppers-strip">
+      <h3>Our Recent Toppers</h3>
+      <div class="toppers-list">
+        <div class="topper-card">
+          <div class="topper-avatar">AK</div>
+          <h5>Arun Kumar</h5>
+          <div class="rank">AIR 47</div>
+          <div class="exam">UPSC CSE 2024</div>
+        </div>
+        <div class="topper-card">
+          <div class="topper-avatar">PM</div>
+          <h5>Priya Meenakshi</h5>
+          <div class="rank">Rank 1</div>
+          <div class="exam">TNPSC Group 1</div>
+        </div>
+        <div class="topper-card">
+          <div class="topper-avatar">RV</div>
+          <h5>Rajan Vel</h5>
+          <div class="rank">1st Rank</div>
+          <div class="exam">SSC CGL 2024</div>
+        </div>
+        <div class="topper-card">
+          <div class="topper-avatar">SK</div>
+          <h5>Sumathi K.</h5>
+          <div class="rank">District 1st</div>
+          <div class="exam">SI Police 2024</div>
+        </div>
+        <div class="topper-card">
+          <div class="topper-avatar">MR</div>
+          <h5>Muthu Raja</h5>
+          <div class="rank">AIR 82</div>
+          <div class="exam">UPSC CSE 2024</div>
+        </div>
+        <div class="topper-card">
+          <div class="topper-avatar">VL</div>
+          <h5>Valli Lakshmi</h5>
+          <div class="rank">Rank 3</div>
+          <div class="exam">TNPSC Group 2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANCHES -->
+<section class="branches page-section" id="branches">
+  <div class="section-inner">
+    <div class="section-tag">Our Locations</div>
+    <h2 class="section-title">Choose Your Branch</h2>
+    <p class="section-sub">We have three well-equipped branches across South Tamil Nadu. Select a branch to explore the courses available there.</p>
+    <div class="branches-grid">
+
+      <!-- Viruthunagar -->
+      <div class="branch-card" id="card-vir" onclick="showCourses('viruthunagar')">
+        <div class="branch-header">
+          <div class="branch-icon">🏛️</div>
+          <h3>Viruthunagar</h3>
+          <p>29, Gandhi Road, Viruthunagar – 626 001</p>
+        </div>
+        <div class="branch-body">
+          <ul>
+            <li>TNPSC Group 1 Exam</li>
+            <li>TNPSC Group 2 Exam</li>
+            <li>State-of-the-art smart classrooms</li>
+            <li>Library with 5,000+ books</li>
+          </ul>
+        </div>
+        <button class="branch-btn">View Courses →</button>
+      </div>
+
+      <!-- Madurai -->
+      <div class="branch-card" id="card-mad" onclick="showCourses('madurai')">
+        <div class="branch-header madurai">
+          <div class="branch-icon">🕌</div>
+          <h3>Madurai</h3>
+          <p>14, Anna Nagar, Madurai – 625 020</p>
+        </div>
+        <div class="branch-body">
+          <ul>
+            <li>UPSC Civil Services Exam</li>
+            <li>SSC CGL Exam</li>
+            <li>Residential & day scholar batches</li>
+            <li>Mock interview panel</li>
+          </ul>
+        </div>
+        <button class="branch-btn">View Courses →</button>
+      </div>
+
+      <!-- Sivakasi -->
+      <div class="branch-card" id="card-siv" onclick="showCourses('sivakasi')">
+        <div class="branch-header sivakasi">
+          <div class="branch-icon">⭐</div>
+          <h3>Sivakasi</h3>
+          <p>8, Court Road, Sivakasi – 626 123</p>
+        </div>
+        <div class="branch-body">
+          <ul>
+            <li>SI Police Exam</li>
+            <li>Banking Exam (IBPS/SBI)</li>
+            <li>Physical training ground</li>
+            <li>Online hybrid batches available</li>
+          </ul>
+        </div>
+        <button class="branch-btn">View Courses →</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COURSES – VIRUTHUNAGAR -->
+<section class="courses-section page-section" id="courses-viruthunagar">
+  <div class="section-inner">
+    <div class="courses-header">
+      <button class="back-btn" onclick="hideCourses()">← Back to Branches</button>
+      <span class="branch-pill">🏛️ Viruthunagar Branch</span>
+      <h2 class="section-title" style="margin:0">Our Courses</h2>
+    </div>
+    <div class="courses-grid">
+
+      <!-- Group 1 -->
+      <div class="course-card">
+        <div class="course-card-header">
+          <span class="course-exam-badge">TNPSC</span>
+          <h3>Group 1 Exam</h3>
+          <p>Comprehensive coaching for TNPSC Group 1 (Combined Civil Services Examination-I) targeting Deputy Collector, DSP, and equivalent posts.</p>
+        </div>
+        <div class="course-details">
+          <div class="detail-item">
+            <div class="label">⏱ Duration</div>
+            <div class="value">12 Months</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">💸 Fees</div>
+            <div class="value">₹45,000</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">🕒 Morning Batch</div>
+            <div class="value">6:00 AM – 9:00 AM</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">🕔 Evening Batch</div>
+            <div class="value">5:00 PM – 8:00 PM</div>
+          </div>
+        </div>
+        <div class="offer-strip">
+          <span class="tag">Offer</span>
+          <p>Early bird discount: <strong>₹5,000 off</strong> if enrolled before July 31. SC/ST candidates get additional 10% concession. Installment payment available in 3 parts.</p>
+        </div>
+        <div class="course-card-footer" style="display: flex; gap: 12px; padding-top: 0;">
+          <button class="view-details-btn" onclick="viewCourseDetails(this, 'Viruthunagar', 'TNPSC Group 1')">View Details</button>
+<a class="apply-btn flex-btn" href="#apply" onclick="prefillCourse('Viruthunagar','TNPSC Group 1')">Apply for Group 1 →</a>
+        </div>
+      </div>
+
+      <!-- Group 2 -->
+      <div class="course-card">
+        <div class="course-card-header">
+          <span class="course-exam-badge">TNPSC</span>
+          <h3>Group 2 Exam</h3>
+          <p>Focused preparation for TNPSC Group 2 and Group 2A exams targeting Sub-Registrar, Junior Inspector, and 1,200+ allied posts.</p>
+        </div>
+        <div class="course-details">
+          <div class="detail-item">
+            <div class="label">⏱ Duration</div>
+            <div class="value">8 Months</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">💸 Fees</div>
+            <div class="value">₹28,000</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">🕒 Morning Batch</div>
+            <div class="value">6:00 AM – 9:00 AM</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">🕔 Evening Batch</div>
+            <div class="value">6:00 PM – 9:00 PM</div>
+          </div>
+        </div>
+        <div class="offer-strip">
+          <span class="tag">Offer</span>
+          <p>Group enrollment discount: <strong>₹3,000 off</strong> for 2 students enrolling together. Women candidates: extra 5% fee waiver. Free study materials included.</p>
+        </div>
+        <div class="course-card-footer" style="display: flex; gap: 12px; padding-top: 0;">
+          <button class="view-details-btn" onclick="viewCourseDetails(this, 'Viruthunagar', 'TNPSC Group 2')">View Details</button>
+<a class="apply-btn flex-btn" href="#apply" onclick="prefillCourse('Viruthunagar','TNPSC Group 2')">Apply for Group 2 →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COURSES – MADURAI -->
+<section class="courses-section page-section" id="courses-madurai">
+  <div class="section-inner">
+    <div class="courses-header">
+      <button class="back-btn" onclick="hideCourses()">← Back to Branches</button>
+      <span class="branch-pill">🕌 Madurai Branch</span>
+      <h2 class="section-title" style="margin:0">Our Courses</h2>
+    </div>
+    <div class="courses-grid">
+
+      <!-- UPSC -->
+      <div class="course-card">
+        <div class="course-card-header">
+          <span class="course-exam-badge">UPSC</span>
+          <h3>Civil Services Exam</h3>
+          <p>End-to-end UPSC CSE preparation covering Prelims, Mains, and Personality Test (Interview) with dedicated mentors for each stage.</p>
+        </div>
+        <div class="course-details">
+          <div class="detail-item">
+            <div class="label">⏱ Duration</div>
+            <div class="value">18 Months</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">💸 Fees</div>
+            <div class="value">₹85,000</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">🕒 Morning Batch</div>
+            <div class="value">7:00 AM – 10:00 AM</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">🕔 Evening Batch</div>
+            <div class="value">4:00 PM – 7:00 PM</div>
+          </div>
+        </div>
+        <div class="offer-strip">
+          <span class="tag">Offer</span>
+          <p>Scholarship exam conducted monthly – <strong>up to 50% fee waiver</strong> for top scorers. OBC/SC/ST special concession available. EMI in 6 months interest-free.</p>
+        </div>
+        <div class="course-card-footer" style="display: flex; gap: 12px; padding-top: 0;">
+          <button class="view-details-btn" onclick="viewCourseDetails(this, 'Madurai', 'UPSC Civil Services')">View Details</button>
+<a class="apply-btn flex-btn" href="#apply" onclick="prefillCourse('Madurai','UPSC Civil Services')">Apply for UPSC CSE →</a>
+        </div>
+      </div>
+
+      <!-- SSC CGL -->
+      <div class="course-card">
+        <div class="course-card-header">
+          <span class="course-exam-badge">SSC</span>
+          <h3>SSC CGL Exam</h3>
+          <p>Comprehensive coaching for SSC Combined Graduate Level exam targeting Income Tax Inspector, Auditor, Assistant, and Central Government posts.</p>
+        </div>
+        <div class="course-details">
+          <div class="detail-item">
+            <div class="label">⏱ Duration</div>
+            <div class="value">6 Months</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">💸 Fees</div>
+            <div class="value">₹22,000</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">🕒 Morning Batch</div>
+            <div class="value">8:00 AM – 11:00 AM</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">🕔 Evening Batch</div>
+            <div class="value">5:00 PM – 8:00 PM</div>
+          </div>
+        </div>
+        <div class="offer-strip">
+          <span class="tag">Offer</span>
+          <p>New batch July offer: <strong>₹2,500 discount</strong> + free online test series worth ₹1,500. Students who cleared Tier 1 elsewhere get ₹5,000 Tier 2 special package.</p>
+        </div>
+        <div class="course-card-footer" style="display: flex; gap: 12px; padding-top: 0;">
+          <button class="view-details-btn" onclick="viewCourseDetails(this, 'Madurai', 'SSC CGL')">View Details</button>
+<a class="apply-btn flex-btn" href="#apply" onclick="prefillCourse('Madurai','SSC CGL')">Apply for SSC CGL →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COURSES – SIVAKASI -->
+<section class="courses-section page-section" id="courses-sivakasi">
+  <div class="section-inner">
+    <div class="courses-header">
+      <button class="back-btn" onclick="hideCourses()">← Back to Branches</button>
+      <span class="branch-pill">⭐ Sivakasi Branch</span>
+      <h2 class="section-title" style="margin:0">Our Courses</h2>
+    </div>
+    <div class="courses-grid">
+
+      <!-- SI Police -->
+      <div class="course-card">
+        <div class="course-card-header">
+          <span class="course-exam-badge">TN Police</span>
+          <h3>SI Police Exam</h3>
+          <p>Integrated coaching for Sub-Inspector of Police (Tamil Nadu Uniformed Services Recruitment Board) including written, physical, and interview preparation.</p>
+        </div>
+        <div class="course-details">
+          <div class="detail-item">
+            <div class="label">⏱ Duration</div>
+            <div class="value">9 Months</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">💸 Fees</div>
+            <div class="value">₹32,000</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">🕒 Morning Batch</div>
+            <div class="value">5:30 AM – 9:00 AM</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">🕔 Evening Batch</div>
+            <div class="value">4:00 PM – 7:00 PM</div>
+          </div>
+        </div>
+        <div class="offer-strip">
+          <span class="tag">Offer</span>
+          <p>Physical training sessions FREE with academic enrollment. Ex-servicemen: <strong>₹4,000 waiver</strong>. Women applicants get free uniform kit worth ₹1,200.</p>
+        </div>
+        <div class="course-card-footer" style="display: flex; gap: 12px; padding-top: 0;">
+          <button class="view-details-btn" onclick="viewCourseDetails(this, 'Sivakasi', 'SI Police Exam')">View Details</button>
+<a class="apply-btn flex-btn" href="#apply" onclick="prefillCourse('Sivakasi','SI Police Exam')">Apply for SI Police →</a>
+        </div>
+      </div>
+
+      <!-- Banking -->
+      <div class="course-card">
+        <div class="course-card-header">
+          <span class="course-exam-badge">Banking</span>
+          <h3>Banking Exam</h3>
+          <p>Complete preparation for IBPS PO, IBPS Clerk, SBI PO, SBI Clerk, and RBI Grade B exams with quantitative, reasoning, and current affairs modules.</p>
+        </div>
+        <div class="course-details">
+          <div class="detail-item">
+            <div class="label">⏱ Duration</div>
+            <div class="value">6 Months</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">💸 Fees</div>
+            <div class="value">₹18,000</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">🕒 Morning Batch</div>
+            <div class="value">7:00 AM – 10:00 AM</div>
+          </div>
+          <div class="detail-item">
+            <div class="label">🕔 Evening Batch</div>
+            <div class="value">5:30 PM – 8:30 PM</div>
+          </div>
+        </div>
+        <div class="offer-strip">
+          <span class="tag">Offer</span>
+          <p>Combo IBPS + SBI bundle: <strong>₹26,000</strong> (save ₹10,000). Online mock tests included free. Re-attempt batch at 50% fee for previous batch students.</p>
+        </div>
+        <div class="course-card-footer" style="display: flex; gap: 12px; padding-top: 0;">
+          <button class="view-details-btn" onclick="viewCourseDetails(this, 'Sivakasi', 'Banking Exam')">View Details</button>
+<a class="apply-btn flex-btn" href="#apply" onclick="prefillCourse('Sivakasi','Banking Exam')">Apply for Banking →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- APPLY FORM -->
+<section class="apply-section page-section" id="apply">
+  <div class="section-inner">
+    <div class="section-tag" style="color:var(--gold)">Admissions Open</div>
+    <h2 class="section-title">Apply for a Course</h2>
+    <p class="section-sub">Fill in your details and our counsellor will get in touch within 24 hours to guide you through the admission process.</p>
+    <div class="apply-form-card">
+      <div id="success-msg" class="success-msg">
+        ✅ Application submitted successfully! Our counsellor will contact you within 24 hours. Welcome to Victory Academy!
+      </div>
+      <div id="apply-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="f-name" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label>Mobile Number *</label>
+            <input type="tel" id="f-mobile" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="f-email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Select Branch *</label>
+            <select id="f-branch" onchange="updateCourseDropdown()">
+              <option value="">-- Choose a Branch --</option>
+              <option value="viruthunagar">Viruthunagar</option>
+              <option value="madurai">Madurai</option>
+              <option value="sivakasi">Sivakasi</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Select Course *</label>
+            <select id="f-course">
+              <option value="">-- Select branch first --</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Preferred Batch</label>
+            <select id="f-batch">
+              <option value="">-- Choose batch --</option>
+              <option>Morning Batch</option>
+              <option>Evening Batch</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Educational Qualification</label>
+          <input type="text" id="f-qual" placeholder="e.g. B.Sc Physics, Anna University 2023">
+        </div>
+        <div class="form-group">
+          <label>Any Message (Optional)</label>
+          <textarea id="f-msg" rows="3" placeholder="Tell us about your preparation level, specific requirements, etc."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">Submit Application 🚀</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- COURSE MODAL -->
+<div class="auth-overlay" id="course-overlay">
+  <div class="auth-modal course-modal-content" style="max-width: 600px;">
+    <button class="auth-close" onclick="closeCourseModal()">✕</button>
+    <div class="auth-header" style="padding-bottom: 24px; text-align: left;">
+      <div id="modal-badge-container" style="margin-bottom: 12px;"></div>
+      <h3 id="modal-title" style="margin-bottom: 12px; font-size: 32px;"></h3>
+      <p id="modal-desc" style="font-size: 15px; line-height: 1.6;"></p>
+    </div>
+    <div class="auth-body" style="padding-top: 0;">
+      <div class="course-details" id="modal-details" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+      </div>
+      <div class="offer-strip" id="modal-offer" style="margin: 0 0 28px 0;">
+      </div>
+      <a class="apply-btn" href="#apply" id="modal-apply-btn" style="text-align: center; font-size: 16px; padding: 16px;">Apply for Course →</a>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="auth-overlay" id="auth-overlay">
+  <div class="auth-modal">
+    <button class="auth-close" onclick="closeAuthModal()">✕</button>
+    
+        <div class="auth-body" style="padding-top: 30px;">
+      <div id="auth-error"></div>
+      
+      <!-- Login Form -->
+      <div id="form-login" class="auth-form active">
+        <div class="auth-header" style="padding:0 0 20px 0;">
+          <h3>Welcome Back</h3>
+          <p>Log in to access your student dashboard.</p>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="login-email" placeholder="student@example.com">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="login-password" placeholder="••••••••">
+        </div>
+        <button class="auth-submit" id="login-btn">Log In</button>
+        <div class="auth-divider">or continue with</div>
+        <button class="google-btn" id="google-login-btn">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+          Sign in with Google
+        </button>
+        <div style="text-align:center; margin-top:16px; font-size:14px; font-weight:600;">
+          <a href="javascript:void(0)" onclick="toggleAuthForm('register')" style="color:var(--gold); text-decoration:none;">Don't have an account? Register here</a>
+        </div>
+      </div>
+
+      <!-- Register Form -->
+      <div id="form-register" class="auth-form">
+        <div class="auth-header" style="padding:0 0 20px 0;">
+          <h3>Create Account</h3>
+          <p>Join Tamil Nadu's top coaching center.</p>
+        </div>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="reg-name" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="reg-email" placeholder="student@example.com">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="reg-password" placeholder="••••••••">
+        </div>
+        <button class="auth-submit" id="register-btn">Create Account</button>
+        <div class="auth-divider">or continue with</div>
+        <button class="google-btn" id="google-register-btn">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+          Sign up with Google
+        </button>
+        <div style="text-align:center; margin-top:16px; font-size:14px; font-weight:600;">
+          <a href="javascript:void(0)" onclick="toggleAuthForm('login')" style="color:var(--gold); text-decoration:none;">Already have an account? Log In</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>Victory Academy</h4>
+        <p>Tamil Nadu's most trusted coaching center for government exam preparation since 2006. Shaping futures, one rank at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Branches</h5>
+        <ul>
+          <li><a href="#branches">Viruthunagar</a></li>
+          <li><a href="#branches">Madurai</a></li>
+          <li><a href="#branches">Sivakasi</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Courses</h5>
+        <ul>
+          <li><a href="#">TNPSC Group 1</a></li>
+          <li><a href="#">TNPSC Group 2</a></li>
+          <li><a href="#">UPSC CSE</a></li>
+          <li><a href="#">SSC CGL</a></li>
+          <li><a href="#">SI Police</a></li>
+          <li><a href="#">Banking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+914562200000">📞 +91 456 220 0000</a></li>
+          <li><a href="mailto:info@victoryacademy.in">✉️ info@victoryacademy.in</a></li>
+          <li><a href="#">🕒 Mon–Sat: 7AM–9PM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Victory Academy. All rights reserved. Built with <span>♥</span> for Tamil Nadu's aspirants.</p>
+      <p style="font-size:12px">Privacy Policy · Terms of Service</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+  import { getFirestore, collection, addDoc, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCzyTDMboNeJ-KabClFZUhY0STmCegG3W8",
+    authDomain: "coachingcenter-497dc.firebaseapp.com",
+    projectId: "coachingcenter-497dc",
+    storageBucket: "coachingcenter-497dc.firebasestorage.app",
+    messagingSenderId: "448244917936",
+    appId: "1:448244917936:web:1eadbf543f75fc678fbd75",
+    measurementId: "G-K2J7CRLH7H"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+  const db = getFirestore(app);
+  window.db = db;
+  window.collection = collection;
+  window.addDoc = addDoc;
+  window.doc = doc;
+  window.setDoc = setDoc;
+
+  // Make globals available to HTML onclick attributes
+  window.openAuthModal = function() {
+    document.getElementById('auth-overlay').classList.add('active');
+    document.getElementById('auth-error').style.display = 'none';
+  }
+  
+  window.closeAuthModal = function() {
+    document.getElementById('auth-overlay').classList.remove('active');
+  }
+
+  window.toggleAuthForm = function(formType) {
+    document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+    document.getElementById('form-' + formType).classList.add('active');
+    document.getElementById('auth-error').style.display = 'none';
+  }
+
+  function showError(msg) {
+    const err = document.getElementById('auth-error');
+    err.textContent = msg;
+    err.style.display = 'block';
+  }
+
+  // Firebase Handlers
+  document.getElementById('google-login-btn').addEventListener('click', () => {
+    signInWithPopup(auth, provider).then(async (cred) => {
+      if (window.db && window.setDoc && window.doc) {
+        await window.setDoc(window.doc(window.db, "users", cred.user.uid), {
+          name: cred.user.displayName,
+          email: cred.user.email,
+          lastLogin: new Date()
+        }, { merge: true });
+      }
+      closeAuthModal();
+    }).catch(e => showError(e.message));
+  });
+
+  document.getElementById('google-register-btn').addEventListener('click', () => {
+    signInWithPopup(auth, provider).then(async (cred) => {
+      if (window.db && window.setDoc && window.doc) {
+        await window.setDoc(window.doc(window.db, "users", cred.user.uid), {
+          name: cred.user.displayName,
+          email: cred.user.email,
+          lastLogin: new Date()
+        }, { merge: true });
+      }
+      closeAuthModal();
+    }).catch(e => showError(e.message));
+  });
+
+  document.getElementById('login-btn').addEventListener('click', () => {
+    const email = document.getElementById('login-email').value;
+    const pass = document.getElementById('login-password').value;
+    if(!email || !pass) return showError("Please fill all fields");
+    signInWithEmailAndPassword(auth, email, pass)
+      .then(async (cred) => {
+        if (window.db && window.setDoc && window.doc) {
+          await window.setDoc(window.doc(window.db, "users", cred.user.uid), {
+            email: cred.user.email,
+            lastLogin: new Date()
+          }, { merge: true });
+        }
+        closeAuthModal();
+      })
+      .catch(e => {
+        if (e.code === 'auth/invalid-credential' || e.code === 'auth/wrong-password' || e.code === 'auth/user-not-found') {
+          showError("User Name or Password Wrong");
+        } else {
+          showError(e.message);
+        }
+      });
+  });
+
+  document.getElementById('register-btn').addEventListener('click', () => {
+    const name = document.getElementById('reg-name').value;
+    const email = document.getElementById('reg-email').value;
+    const pass = document.getElementById('reg-password').value;
+    if(!name || !email || !pass) return showError("Please fill all fields");
+    createUserWithEmailAndPassword(auth, email, pass)
+      .then((cred) => {
+        updateProfile(cred.user, { displayName: name }).then(async () => {
+          if (window.db && window.setDoc && window.doc) {
+            await window.setDoc(window.doc(window.db, "users", cred.user.uid), {
+              name: name,
+              email: cred.user.email,
+              createdAt: new Date(),
+              lastLogin: new Date()
+            });
+          }
+          closeAuthModal();
+        });
+      })
+      .catch(e => showError(e.message));
+  });
+
+
+  window.logoutUser = function() {
+    signOut(auth);
+  }
+
+  // Auth State Observer
+  onAuthStateChanged(auth, (user) => {
+    window.currentUser = user;
+    if (user) {
+      document.getElementById('login-nav-btn').style.display = 'none';
+      document.getElementById('user-profile').style.display = 'flex';
+      const displayName = user.displayName || user.email.split('@')[0];
+      document.getElementById('user-name-display').textContent = displayName;
+      document.getElementById('user-avatar-initial').textContent = displayName.charAt(0).toUpperCase();
+    } else {
+      document.getElementById('login-nav-btn').style.display = 'block';
+      document.getElementById('user-profile').style.display = 'none';
+    }
+  });
+</script>
+
