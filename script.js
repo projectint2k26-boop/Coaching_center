@@ -97,10 +97,22 @@ window.submitForm = async function () {
       });
     }
 
-    document.getElementById('apply-form').style.display = 'none';
-    const msg = document.getElementById('success-msg');
-    msg.style.display = 'block';
-    msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Clear form inputs
+    document.getElementById('f-name').value = '';
+    document.getElementById('f-mobile').value = '';
+    document.getElementById('f-email').value = '';
+    document.getElementById('f-branch').value = '';
+    document.getElementById('f-course').value = '';
+    document.getElementById('f-batch').value = '';
+    document.getElementById('f-qual').value = '';
+    document.getElementById('f-msg').value = '';
+    
+    // Reset button
+    btn.textContent = 'Submit Application 🚀';
+    btn.disabled = false;
+    
+    // Show success modal
+    document.getElementById('success-overlay').classList.add('active');
   } catch (e) {
     alert("Error submitting application: " + e.message);
     btn.textContent = 'Submit Application';

@@ -32,7 +32,6 @@
     </div>
 
     <button class="login-btn" id="login-nav-btn" onclick="openAuthModal()">Login</button>
-    <a class="nav-cta" href="javascript:void(0)" onclick="showPage('apply')">Enroll Now</a>
   </div>
 </nav>
 
@@ -553,9 +552,7 @@
     <h2 class="section-title">Apply for a Course</h2>
     <p class="section-sub">Fill in your details and our counsellor will get in touch within 24 hours to guide you through the admission process.</p>
     <div class="apply-form-card">
-      <div id="success-msg" class="success-msg">
-        ✅ Application submitted successfully! Our counsellor will contact you within 24 hours. Welcome to Victory Academy!
-      </div>
+
       <div id="apply-form">
         <div class="form-row">
           <div class="form-group">
@@ -629,6 +626,18 @@
       </div>
       <a class="apply-btn" href="#apply" id="modal-apply-btn" style="text-align: center; font-size: 16px; padding: 16px;">Apply for Course →</a>
     </div>
+  </div>
+</div>
+<!-- SUCCESS MODAL -->
+<div class="auth-overlay" id="success-overlay">
+  <div class="auth-modal" style="max-width: 440px; text-align: center; padding-top: 40px; padding-bottom: 30px;">
+    <button class="auth-close" onclick="closeSuccessModal()">✕</button>
+    <div style="font-size: 60px; margin-bottom: 20px;">✅</div>
+    <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: var(--navy); margin-bottom: 12px;">Application Submitted!</h3>
+    <p style="color: var(--text-muted); font-size: 15px; padding: 0 40px; line-height: 1.6; margin-bottom: 30px;">
+      Our counsellor will contact you within 24 hours to guide you through the admission process.<br><br>Welcome to Victory Academy!
+    </p>
+    <button class="form-submit" style="width: calc(100% - 80px); margin: 0 auto; display: block;" onclick="closeSuccessModal()">Done</button>
   </div>
 </div>
 
@@ -780,6 +789,11 @@
   
   window.closeAuthModal = function() {
     document.getElementById('auth-overlay').classList.remove('active');
+  }
+
+  window.closeSuccessModal = function() {
+    document.getElementById('success-overlay').classList.remove('active');
+    showPage('home'); // Send them back to home page after success
   }
 
   window.toggleAuthForm = function(formType) {
